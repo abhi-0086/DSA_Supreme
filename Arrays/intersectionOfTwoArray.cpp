@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    vector<int> a{1, 2, 3, 4, 6, 8};
+    vector<int> a{1, 2, 3, 3, 4, 6, 8};
     vector<int> b{3, 4, 7, 9};
 
     vector<int> ans;
@@ -13,7 +13,11 @@ int main()
         for (int j = 0; j < b.size(); j++)
         {
             if (element == b[j])
+            {
                 ans.push_back(element);
+                b[j] = -1;
+                break;
+            }
         }
     }
 
